@@ -1,0 +1,14 @@
+language: ruby
+rbenv:
+- 2.5.3
+addons:
+  postgresql: 9.6
+script:
+- bundle exec rails db:{create,migrate} RAILS_ENV=test
+- bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: pm3IfRDXZi8IgzSWosOiNG620gVl895p2afKYsGB/GjbKitnZ2FGng/Kegusq6QdnaMeEyUJHsLenFk1vJwOCOwue0t9KnpEgofOTXo0weyyIfmsxYhGLe3wVc3c2CJC6vxC2c/2MLk29oe3jFLT0fLGh55f/zDsdY4jsMuIxFcqy2s6v0Ew0yF0qsqF8naiiEE9TjBxa7H+2Q/a688hw+18V0C0TnnghPz2Yuue6+wEyuSINCCCTneVCcsugU7D4VDqGKcHweJncLHeU+CnDymQPVgFGLhHiZ9e0Cy3h667g1GEGq3gIw6PHxNv54+Kac2OqIDLMqFomVscHocC9+COg7Mw8QL9ZaAlbtdU8/uhxLkT6QjYHC5TtUzIedJOh3+l2KkkFZLf46ZXyu0SSA/vlJku9Q9zpnnFV0922SJhdHDF6ZNWykW/zGLjrnWsn2cHBf7JGEHe58Fp64W4OWoMwgJWJKN2KsHGy2ghV41gvpODBlBdmVwE6m0cE6TwPBu/xjtYKqDDWvWbqmtv4OgBUpR30oIqeEuMT2GceW0Hh4s+zClZFwzBLplTGbxq9b6eOB3kNWhsIUHZ6M4QTsRw3KydQUimIUfYAekKmAY84JqvR4fjsgDCg2qte4bpi6/ZiI5Y/YMucJIZ6K2uhYLoa0NPoZ2weEEq43wFbnI=
+  app: relocate-back-end-rails
+  run: rails db:migrate
