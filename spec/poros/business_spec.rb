@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Utility do
+describe Business do
   it "exists" do
     attr = {
           name: "Xcel Energy",
@@ -12,14 +12,14 @@ describe Utility do
           location: {:address1=>"321 W Agate Ave", :address2=>"", :address3=>"", :city=>"Granby", :zip_code=>"80446", :country=>"US", :state=>"CO"}
         }
 
-    utility = Utility.new(attr)
-    expect(utility).to be_a(Utility)
-    expect(utility.address(attr[:location])).to eq("321 W Agate Ave  Granby CO, 80446")
-    expect(utility.name).to be_a(String)
-    expect(utility.image).to be_a(String)
-    expect(utility.url).to be_a(String)
-    expect(utility.phone).to be_a(String)
-    expect(utility.distance).to be_a(Float)
-    expect(utility.location).to be_a(String)
+    business = Business.new(attr)
+    expect(business).to be_a(Business)
+    expect(business.address(attr[:location])).to eq("321 W Agate Ave  Granby CO, 80446")
+    expect(business.name).to be_a(String)
+    expect(business.image).to be_a(String)
+    expect(business.url).to be_a(String)
+    expect(business.phone).to be_a(String)
+    expect(business.distance).to be_a(Float)
+    expect(business.location).to be_a(String)
   end
 end

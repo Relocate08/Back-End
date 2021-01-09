@@ -1,7 +1,18 @@
 class BusinessesSearchFacade
   def self.utilities_search(location, type)
-    utilities = BusinessesSearchService.utility_search(location, type)
-    open_businesses = utilities[:data].select {|result| result[:is_closed] == false}
-    open_businesses.map{|result| Utility.new(result)}
+    businesses = BusinessesSearchService.utility_search(location, type)
+    is_open(businesses)
+  end
+
+  def self.recreation_search(location, type)
+    businesses = BusinessesSearchService.recreation_search(location, type)
+    is_open(businesses)
+  end
+
+  private
+
+  def self.is_open(businesses)
+    results = businesses[:data].select {|result| result[:is_closed] == false}
+    results.map{|result| Business.new(result)}
   end
 end

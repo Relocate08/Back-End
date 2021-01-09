@@ -1,4 +1,4 @@
-class Utility
+class Business
   attr_reader :name,
               :image,
               :url,
