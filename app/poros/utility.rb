@@ -5,16 +5,18 @@ class Utility
               :closed_bool,
               :phone,
               :distance,
-              :location
+              :location,
+              :id
 
   def initialize(result)
     @name = result[:name]
     @image = result[:image]
     @url = result[:url]
-    @closed_bool = result[:is_closed]
+    @closed_bool = result[:is_closed] 
     @phone = result[:phone]
     @distance = result[:distance]
     @location = address(result[:location])
+    @id = result[:id]
   end
 
   def address(location)
