@@ -4,7 +4,7 @@ describe 'Businesses Search Facade' do
 
   it 'can see electricity search results' do
     utility = BusinessesSearchFacade.utilities_search('80211', 'electricity')
-
+   
     expect(utility).to be_an(Array)
     expect(utility.first).to be_a(Utility)
     expect(utility.first.distance).to be_a(Float)
