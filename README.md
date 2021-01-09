@@ -29,6 +29,10 @@ This project requires:
 
 Relocate-Back-End-Rails is deployed remotely via Heroku (https://relocate-back-end-rails.herokuapp.com/)
 
+## Endpoints:
+
+- `get '/:location/utilities/:type', to: 'businesses_search#utilities'`
+
 ## Schema <a name="schema"></a>
 
 To be added as needed
