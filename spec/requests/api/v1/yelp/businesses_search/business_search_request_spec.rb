@@ -11,7 +11,7 @@ describe "Yelp business search by category" do
     utility_info = json[:data][0]
     expect(utility_info).to be_a(Hash)
     expect(utility_info).to have_key(:id)
-    expect(utility_info[:id]).to eq(nil)
+    expect(utility_info[:id]).to be_a(String)
     expect(utility_info).to have_key(:type)
     expect(utility_info[:type]).to eq("utility")
     expect(utility_info).to have_key(:attributes)
