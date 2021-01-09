@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe 'Business Search Service' do
+
   it 'search(electricity)' do
     electricity = BusinessesSearchService.utility_search('80211', 'electricity')
     expect(electricity).to be_a(Hash)
@@ -26,6 +27,30 @@ describe 'Business Search Service' do
     expect(electricity_info[:location]).to be_a(Hash)
   end
 
+  it 'search(water)' do
+    water = BusinessesSearchService.utility_search('80211', 'water')
+    expect(water).to be_a(Hash)
+    water_info = water[:data][0]
+    expect(water_info).to be_an(Hash)
+
+    expect(water_info).to have_key(:name)
+    expect(water_info[:name]).to be_a(String)
+
+    expect(water_info).to have_key(:image)
+    expect(water_info[:image]).to be_a(String)
+
+    expect(water_info).to have_key(:url)
+    expect(water_info[:url]).to be_a(String)
+
+    expect(water_info).to have_key(:phone)
+    expect(water_info[:phone]).to be_a(String)
+
+    expect(water_info).to have_key(:distance)
+    expect(water_info[:distance]).to be_a(Float)
+
+    expect(water_info).to have_key(:location)
+    expect(water_info[:location]).to be_a(Hash)
+  end
 
   it 'search(isps)' do
     isps = BusinessesSearchService.utility_search('80211', 'isps')
