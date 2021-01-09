@@ -16,9 +16,6 @@ describe 'Business Search Service' do
     expect(electricity_info).to have_key(:url)
     expect(electricity_info[:url]).to be_a(String)
 
-    expect(electricity_info).to have_key(:is_closed)
-    expect(electricity_info[:is_closed]).to be_a(FalseClass)
-
     expect(electricity_info).to have_key(:phone)
     expect(electricity_info[:phone]).to be_a(String)
 

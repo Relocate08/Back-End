@@ -14,11 +14,10 @@ describe Utility do
 
     utility = Utility.new(attr)
     expect(utility).to be_a(Utility)
-    expect(utility.address(attr[:location])).to eq("321 W Agate Ave , Granby, CO, 80446")
+    expect(utility.address(attr[:location])).to eq("321 W Agate Ave  Granby CO, 80446")
     expect(utility.name).to be_a(String)
     expect(utility.image).to be_a(String)
     expect(utility.url).to be_a(String)
-    expect(utility.closed_bool).to eq(false)
     expect(utility.phone).to be_a(String)
     expect(utility.distance).to be_a(Float)
     expect(utility.location).to be_a(String)

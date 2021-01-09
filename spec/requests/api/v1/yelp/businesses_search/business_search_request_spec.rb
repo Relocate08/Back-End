@@ -26,9 +26,6 @@ describe "Yelp business search by category" do
     expect(utility_attr).to have_key(:url)
     expect(utility_attr[:url]).to be_a(String)
 
-    expect(utility_attr).to have_key(:closed_bool)
-    expect(utility_attr[:closed_bool]).to be_a(FalseClass)
-
     expect(utility_attr).to have_key(:phone)
     expect(utility_attr[:phone]).to be_a(String)
 
