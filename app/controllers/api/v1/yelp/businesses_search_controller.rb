@@ -10,7 +10,7 @@ class Api::V1::Yelp::BusinessesSearchController < ApplicationController
   end
 
   def find_business
-    data = BusinessesSearchFacade.find_business(params[:yelp_api_id])
+    data = BusinessesSearchFacade.find_business(params[:yelp_business_id])
     render json: BusinessesSerializer.new(data)
   end
 end
