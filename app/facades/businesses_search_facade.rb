@@ -9,6 +9,10 @@ class BusinessesSearchFacade
     is_open(businesses)
   end
 
+  def self.find_business(yelp_api_id)
+    BusinessesSearchService.find_business(yelp_api_id)
+  end
+
   private
 
   def self.is_open(businesses)
