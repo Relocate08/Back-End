@@ -69,7 +69,7 @@ describe 'Businesses Search Facade' do
 
   it 'can see yoga search results' do
     yoga = BusinessesSearchFacade.recreation_search('80211', 'yoga')
-playgrounds
+
     expect(yoga).to be_an(Array)
     expect(yoga.first).to be_a(Business)
     expect(yoga.first.distance).to be_a(Float)
