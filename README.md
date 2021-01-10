@@ -1,12 +1,12 @@
 ## About This Project:
 
-Relocate08 provides users with the ability to enter an address in order to receive curated information for services near their new home. 
+Relocate08 provides users with the ability to enter an address in order to receive curated information for services near their new home.
 
-Relocate08 is an application that utilizes a frontend, backend, and microservice to consume and expose API data sourced from Yelp. This backend is responsible for receiving requests from the frontend, submiting requests to the microservice which then returns API data for the backend to package and return to the frontend for viewing. 
+Relocate08 is an application that utilizes a frontend, backend, and microservice to consume and expose API data sourced from Yelp. This backend is responsible for receiving requests from the frontend, submiting requests to the microservice which then returns API data for the backend to package and return to the frontend for viewing.
 
 ## Local Setup:
 
-This project requires: 
+This project requires:
 - Ruby 2.5.3.
 - Rails 5.2.4.3
 
@@ -31,9 +31,16 @@ Relocate-Back-End-Rails is deployed remotely via Heroku (https://relocate-back-e
 
 ## Endpoints:
 
-- `get '/:location/utilities/:type', to: 'businesses_search#utilities'`
+- `get '/:location/utilities/:type'`
+- `get '/:location/recreation/:type'`
+- `get '/businesses/:yelp_business_id'`
 
 ## Schema <a name="schema"></a>
 
-To be added as needed
-
+- Table: Locations
+  * location:string
+  * user_id:integer
+- Table: Favorites
+  * user_id:integer
+  * yelp_business_id:string
+  * business_name:string

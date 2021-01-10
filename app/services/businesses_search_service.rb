@@ -6,7 +6,12 @@ class BusinessesSearchService
 
   def self.recreation_search(location, type)
     response = conn.get("/#{location}/recreation/#{type}")
-    JSON.parse(response.body, symbolize_names: true)
+    parsed(response)
+  end
+
+  def self.find_business(yelp_business_id)
+    response = conn.get("/businesses/#{yelp_business_id}")
+    parsed(response)
   end
 
   private

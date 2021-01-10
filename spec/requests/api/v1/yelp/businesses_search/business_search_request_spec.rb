@@ -144,4 +144,36 @@ describe "Yelp businesses search by category" do
     expect(businesses_attr).to have_key(:location)
     expect(businesses_attr[:location]).to be_a(String)
   end
+
+  it 'can get a business\' details' do
+    get '/api/v1/yelp/businesses/WavvLdfdP6g8aZTtbBQHTw'
+
+    expect(response).to be_successful
+    json = JSON.parse(response.body, symbolize_names: true)
+
+    expect(json).to be_a(Hash)
+    business_info = json[:data]
+    expect(business_info).to be_a(Hash)
+    expect(business_info).to have_key(:id)
+    expect(business_info[:id]).to be_a(String)
+    expect(business_info).to have_key(:type)
+    expect(business_info[:type]).to eq("businesses")
+    expect(business_info).to have_key(:attributes)
+
+    business_attr = business_info[:attributes]
+    expect(business_attr).to have_key(:name)
+    expect(business_attr[:name]).to be_a(String)
+
+    expect(business_attr).to have_key(:image)
+    expect(business_attr[:image]).to be_a(String)
+
+    expect(business_attr).to have_key(:url)
+    expect(business_attr[:url]).to be_a(String)
+
+    expect(business_attr).to have_key(:phone)
+    expect(business_attr[:phone]).to be_a(String)
+
+    expect(business_attr).to have_key(:location)
+    expect(business_attr[:location]).to be_a(String)
+  end
 end
