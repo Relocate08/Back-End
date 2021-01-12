@@ -28,8 +28,14 @@ describe 'Location' do
     expect(parsed[:data][:attributes][:location]).to eq(record.location)
   end
 
-  xit 'if a user location is searched for but record does not exist' do
-    # get '/api/v1/'
+  it 'if a user location is searched for but record does not exist' do
+    get '/api/v1/location/13'
+
+    expect(response).to be_successful
+    parsed = JSON.parse(response.body, symbolize_names: true)
+
+    expect(parsed).to have_key(:data)
+    expect(parsed[:data]).to eq(nil)
   end
 
   it 'creates a location entry' do
