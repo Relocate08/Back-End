@@ -4,8 +4,8 @@ describe 'Location' do
   it 'returns the user location' do
     record = create(:location, location: '80110')
 
-    get "/api/v1/#{record.location}/#{record.user_id}"
-    
+    get "/api/v1/location/#{record.user_id}"
+
     expect(response).to be_successful
     parsed = JSON.parse(response.body, symbolize_names: true)
 
@@ -28,12 +28,12 @@ describe 'Location' do
     expect(parsed[:data][:attributes][:location]).to eq(record.location)
   end
 
-  it 'if a user location is searched for but record does not exist' do
-
+  xit 'if a user location is searched for but record does not exist' do
+    # get '/api/v1/'
   end
 
   it 'creates a location entry' do
-    location_params = { user_id: 1, location: '80110'}
+    location_params = { user_id: 1, location: '80110' }
 
     post "/api/v1/#{location_params[:location]}/#{location_params[:user_id]}"
     created_location = Location.last
