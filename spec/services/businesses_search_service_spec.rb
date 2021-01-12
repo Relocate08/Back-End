@@ -126,4 +126,129 @@ describe 'Business Search Service' do
     expect(gym_info).to have_key(:location)
     expect(gym_info[:location]).to be_a(Hash)
   end
+
+  it 'search(recreation - yoga)' do
+    yoga = BusinessesSearchService.recreation_search('80211', 'yoga')
+    expect(yoga).to be_a(Hash)
+    yoga_info = yoga[:data][0]
+    expect(yoga_info).to be_an(Hash)
+
+    expect(yoga_info).to have_key(:name)
+    expect(yoga_info[:name]).to be_a(String)
+
+    expect(yoga_info).to have_key(:image)
+    expect(yoga_info[:image]).to be_a(String)
+
+    expect(yoga_info).to have_key(:url)
+    expect(yoga_info[:url]).to be_a(String)
+
+    expect(yoga_info).to have_key(:phone)
+    expect(yoga_info[:phone]).to be_a(String)
+
+    expect(yoga_info).to have_key(:distance)
+    expect(yoga_info[:distance]).to be_a(Float)
+
+    expect(yoga_info).to have_key(:location)
+    expect(yoga_info[:location]).to be_a(Hash)
+  end
+
+  it 'search(recreation - parks)' do
+    parks = BusinessesSearchService.recreation_search('80211', 'parks')
+    expect(parks).to be_a(Hash)
+    parks_info = parks[:data][0]
+    expect(parks_info).to be_an(Hash)
+
+    expect(parks_info).to have_key(:name)
+    expect(parks_info[:name]).to be_a(String)
+
+    expect(parks_info).to have_key(:image)
+    expect(parks_info[:image]).to be_a(String)
+
+    expect(parks_info).to have_key(:url)
+    expect(parks_info[:url]).to be_a(String)
+
+    expect(parks_info).to have_key(:phone)
+    expect(parks_info[:phone]).to be_a(String)
+
+    expect(parks_info).to have_key(:distance)
+    expect(parks_info[:distance]).to be_a(Float)
+
+    expect(parks_info).to have_key(:location)
+    expect(parks_info[:location]).to be_a(Hash)
+  end
+
+  it 'search(recreation - hiking)' do
+    hiking = BusinessesSearchService.recreation_search('80211', 'hiking')
+    expect(hiking).to be_a(Hash)
+    hiking_info = hiking[:data][0]
+    expect(hiking_info).to be_an(Hash)
+
+    expect(hiking_info).to have_key(:name)
+    expect(hiking_info[:name]).to be_a(String)
+
+    expect(hiking_info).to have_key(:image)
+    expect(hiking_info[:image]).to be_a(String)
+
+    expect(hiking_info).to have_key(:url)
+    expect(hiking_info[:url]).to be_a(String)
+
+    expect(hiking_info).to have_key(:phone)
+    expect(hiking_info[:phone]).to be_a(String)
+
+    expect(hiking_info).to have_key(:distance)
+    expect(hiking_info[:distance]).to be_a(Float)
+
+    expect(hiking_info).to have_key(:location)
+    expect(hiking_info[:location]).to be_a(Hash)
+  end
+
+  it 'search(recreation - recreation)' do
+    recreation = BusinessesSearchService.recreation_search('80211', 'recreation')
+    expect(recreation).to be_a(Hash)
+    recreation_info = recreation[:data][0]
+    expect(recreation_info).to be_an(Hash)
+
+    expect(recreation_info).to have_key(:name)
+    expect(recreation_info[:name]).to be_a(String)
+
+    expect(recreation_info).to have_key(:image)
+    expect(recreation_info[:image]).to be_a(String)
+
+    expect(recreation_info).to have_key(:url)
+    expect(recreation_info[:url]).to be_a(String)
+
+    expect(recreation_info).to have_key(:phone)
+    expect(recreation_info[:phone]).to be_a(String)
+
+    expect(recreation_info).to have_key(:distance)
+    expect(recreation_info[:distance]).to be_a(Float)
+
+    expect(recreation_info).to have_key(:location)
+    expect(recreation_info[:location]).to be_a(Hash)
+  end
+
+  it 'search(recreation - pools)' do
+    pools = BusinessesSearchService.recreation_search('80211', 'pools')
+    expect(pools).to be_a(Hash)
+    pools_info = pools[:data][0]
+    expect(pools_info).to be_an(Hash)
+
+    expect(pools_info).to have_key(:name)
+    expect(pools_info[:name]).to be_a(String)
+
+    expect(pools_info).to have_key(:image)
+    expect(pools_info[:image]).to be_a(String)
+
+    expect(pools_info).to have_key(:url)
+    expect(pools_info[:url]).to be_a(String)
+
+    expect(pools_info).to have_key(:phone)
+    expect(pools_info[:phone]).to be_a(String)
+
+    expect(pools_info).to have_key(:distance)
+    expect(pools_info[:distance]).to be_a(Float)
+
+    expect(pools_info).to have_key(:location)
+    expect(pools_info[:location]).to be_a(Hash)
+  end
 end
