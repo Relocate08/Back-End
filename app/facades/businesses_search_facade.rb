@@ -9,9 +9,9 @@ class BusinessesSearchFacade
     is_open(businesses)
   end
 
-  def self.find_business(yelp_business_id)
-    business = BusinessesSearchService.find_business(yelp_business_id)
-    Business.new(business)
+  def self.homeservices_search(location, type)
+    businesses = BusinessesSearchService.homeservice_search(location, type)
+    is_open(businesses)
   end
 
   def self.is_open(businesses)
