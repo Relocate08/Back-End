@@ -39,14 +39,17 @@ describe 'Location' do
   end
 
   it 'creates a location entry' do
-    location_params = { user_id: 1, location: '80110' }
+    user_id = 23
+    location = '80110'
 
-    post "/api/v1/#{location_params[:location]}/#{location_params[:user_id]}"
+# Not sure how to go forward with this, likely will need to pass in params instead
+
+    post "/api/v1/#{location}/#{user_id}"
     created_location = Location.last
 
     expect(response).to be_successful
-
-    expect(created_location.user_id).to eq(location_params[:user_id])
-    expect(created_location.location).to eq(location_params[:location])
+    parsed = JSON.parse(response.body, symbolize_names: true)
+require 'pry'; binding.pry
+    expect(parsed[:data])
   end
 end
