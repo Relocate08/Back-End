@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Business Search Service' do
-
+#utility endpoints
   it 'search(utility - electricity)' do
     electricity = BusinessesSearchService.utility_search('80211', 'electricity')
     expect(electricity).to be_a(Hash)
@@ -102,6 +102,7 @@ describe 'Business Search Service' do
     expect(tv_info[:location]).to be_a(Hash)
   end
 
+# recreation endpoints
   it 'search(recreation - gyms)' do
     gym = BusinessesSearchService.recreation_search('80211', 'gyms')
     expect(gym).to be_a(Hash)
@@ -300,5 +301,181 @@ describe 'Business Search Service' do
 
     expect(playgrounds_info).to have_key(:location)
     expect(playgrounds_info[:location]).to be_a(Hash)
+  end
+
+# homeservices endpoints
+  it 'search(homeservices - homecleaning)' do
+    homecleaning = BusinessesSearchService.homeservice_search('80211', 'homecleaning')
+    expect(homecleaning).to be_a(Hash)
+    homecleaning_info = homecleaning[:data][0]
+    expect(homecleaning_info).to be_an(Hash)
+
+    expect(homecleaning_info).to have_key(:name)
+    expect(homecleaning_info[:name]).to be_a(String)
+
+    expect(homecleaning_info).to have_key(:image)
+    expect(homecleaning_info[:image]).to be_a(String)
+
+    expect(homecleaning_info).to have_key(:url)
+    expect(homecleaning_info[:url]).to be_a(String)
+
+    expect(homecleaning_info).to have_key(:phone)
+    expect(homecleaning_info[:phone]).to be_a(String)
+
+    expect(homecleaning_info).to have_key(:distance)
+    expect(homecleaning_info[:distance]).to be_a(Float)
+
+    expect(homecleaning_info).to have_key(:location)
+    expect(homecleaning_info[:location]).to be_a(Hash)
+  end
+
+  it 'search(homeservices - landscaping)' do
+    landscaping = BusinessesSearchService.homeservice_search('80211', 'landscaping')
+    expect(landscaping).to be_a(Hash)
+    landscaping_info = landscaping[:data][0]
+    expect(landscaping_info).to be_an(Hash)
+
+    expect(landscaping_info).to have_key(:name)
+    expect(landscaping_info[:name]).to be_a(String)
+
+    expect(landscaping_info).to have_key(:image)
+    expect(landscaping_info[:image]).to be_a(String)
+
+    expect(landscaping_info).to have_key(:url)
+    expect(landscaping_info[:url]).to be_a(String)
+
+    expect(landscaping_info).to have_key(:phone)
+    expect(landscaping_info[:phone]).to be_a(String)
+
+    expect(landscaping_info).to have_key(:distance)
+    expect(landscaping_info[:distance]).to be_a(Float)
+
+    expect(landscaping_info).to have_key(:location)
+    expect(landscaping_info[:location]).to be_a(Hash)
+  end
+
+  it 'search(homeservices - handyman)' do
+    handyman = BusinessesSearchService.homeservice_search('80211', 'handyman')
+    expect(handyman).to be_a(Hash)
+    handyman_info = handyman[:data][0]
+    expect(handyman_info).to be_an(Hash)
+
+    expect(handyman_info).to have_key(:name)
+    expect(handyman_info[:name]).to be_a(String)
+
+    expect(handyman_info).to have_key(:image)
+    expect(handyman_info[:image]).to be_a(String)
+
+    expect(handyman_info).to have_key(:url)
+    expect(handyman_info[:url]).to be_a(String)
+
+    expect(handyman_info).to have_key(:phone)
+    expect(handyman_info[:phone]).to be_a(String)
+
+    expect(handyman_info).to have_key(:distance)
+    expect(handyman_info[:distance]).to be_a(Float)
+
+    expect(handyman_info).to have_key(:location)
+    expect(handyman_info[:location]).to be_a(Hash)
+  end
+
+  it 'search(homeservices - damagerestoration)' do
+    damagerestoration = BusinessesSearchService.homeservice_search('80211', 'damagerestoration')
+    expect(damagerestoration).to be_a(Hash)
+    damagerestoration_info = damagerestoration[:data][0]
+    expect(damagerestoration_info).to be_an(Hash)
+
+    expect(damagerestoration_info).to have_key(:name)
+    expect(damagerestoration_info[:name]).to be_a(String)
+
+    expect(damagerestoration_info).to have_key(:image)
+    expect(damagerestoration_info[:image]).to be_a(String)
+
+    expect(damagerestoration_info).to have_key(:url)
+    expect(damagerestoration_info[:url]).to be_a(String)
+
+    expect(damagerestoration_info).to have_key(:phone)
+    expect(damagerestoration_info[:phone]).to be_a(String)
+
+    expect(damagerestoration_info).to have_key(:distance)
+    expect(damagerestoration_info[:distance]).to be_a(Float)
+
+    expect(damagerestoration_info).to have_key(:location)
+    expect(damagerestoration_info[:location]).to be_a(Hash)
+  end
+
+  it 'search(homeservices - locksmiths)' do
+    locksmiths = BusinessesSearchService.homeservice_search('80211', 'locksmiths')
+    expect(locksmiths).to be_a(Hash)
+    locksmiths_info = locksmiths[:data][0]
+    expect(locksmiths_info).to be_an(Hash)
+
+    expect(locksmiths_info).to have_key(:name)
+    expect(locksmiths_info[:name]).to be_a(String)
+
+    expect(locksmiths_info).to have_key(:image)
+    expect(locksmiths_info[:image]).to be_a(String)
+
+    expect(locksmiths_info).to have_key(:url)
+    expect(locksmiths_info[:url]).to be_a(String)
+
+    expect(locksmiths_info).to have_key(:phone)
+    expect(locksmiths_info[:phone]).to be_a(String)
+
+    expect(locksmiths_info).to have_key(:distance)
+    expect(locksmiths_info[:distance]).to be_a(Float)
+
+    expect(locksmiths_info).to have_key(:location)
+    expect(locksmiths_info[:location]).to be_a(Hash)
+  end
+
+  it 'search(homeservices - painters)' do
+    painters = BusinessesSearchService.homeservice_search('80211', 'painters')
+    expect(painters).to be_a(Hash)
+    painters_info = painters[:data][0]
+    expect(painters_info).to be_an(Hash)
+
+    expect(painters_info).to have_key(:name)
+    expect(painters_info[:name]).to be_a(String)
+
+    expect(painters_info).to have_key(:image)
+    expect(painters_info[:image]).to be_a(String)
+
+    expect(painters_info).to have_key(:url)
+    expect(painters_info[:url]).to be_a(String)
+
+    expect(painters_info).to have_key(:phone)
+    expect(painters_info[:phone]).to be_a(String)
+
+    expect(painters_info).to have_key(:distance)
+    expect(painters_info[:distance]).to be_a(Float)
+
+    expect(painters_info).to have_key(:location)
+    expect(painters_info[:location]).to be_a(Hash)
+  end
+
+  it 'search(homeservices - plumbing)' do
+    plumbing = BusinessesSearchService.homeservice_search('80211', 'plumbing')
+    expect(plumbing).to be_a(Hash)
+    plumbing_info = plumbing[:data][0]
+    expect(plumbing_info).to be_an(Hash)
+
+    expect(plumbing_info).to have_key(:name)
+    expect(plumbing_info[:name]).to be_a(String)
+
+    expect(plumbing_info).to have_key(:image)
+    expect(plumbing_info[:image]).to be_a(String)
+
+    expect(plumbing_info).to have_key(:url)
+    expect(plumbing_info[:url]).to be_a(String)
+
+    expect(plumbing_info).to have_key(:phone)
+    expect(plumbing_info[:phone]).to be_a(String)
+
+    expect(plumbing_info).to have_key(:distance)
+    expect(plumbing_info[:distance]).to be_a(Float)
+
+    expect(plumbing_info).to have_key(:location)
+    expect(plumbing_info[:location]).to be_a(Hash)
   end
 end
