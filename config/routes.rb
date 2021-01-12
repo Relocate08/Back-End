@@ -4,7 +4,7 @@ Rails.application.routes.draw do
       namespace :yelp do
         get '/:location/utilities/:type', to: 'businesses_search#utilities'
         get '/:location/recreation/:type', to: 'businesses_search#recreation'
-        get '/businesses/:yelp_business_id', to: 'businesses_search#find_business'
+        get '/:location/homeservices/:type', to: 'businesses_search#homeservices'
       end
 
       namespace :favorites do
