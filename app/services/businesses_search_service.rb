@@ -9,8 +9,8 @@ class BusinessesSearchService
     parsed(response)
   end
 
-  def self.find_business(yelp_business_id)
-    response = conn.get("/businesses/#{yelp_business_id}")
+  def self.homeservice_search(location,type)
+    response = conn.get("/#{location}/homeservices/#{type}")
     parsed(response)
   end
 
