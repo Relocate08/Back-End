@@ -15,11 +15,29 @@ describe 'favorites' do
     business_name_1 = 'Mock Hawks'
     post "/api/v1/favorites/#{user_id_1}/#{business_id_1}", params: {business_name: business_name_1}
 
-    finding_fave = Favorite.find(
-      user_id: user_id_1,
-      yelp_business_id: business_id_1,
-      business_name: business_name_1
-    )
-    expect(finding_fave).to be(true)
+    finding_fave = Favorite.last
+    expect(finding_fave.user_id).to eq(user_id_1)
+    expect(finding_fave.yelp_business_id).to eq(business_id_1)
+    expect(finding_fave.business_name).to eq(business_name_1)
+  end
+
+  it 'can show all favorites for a user' do
+    user_id_1 = 25
+    business_id_1 = 'askljufo987awyg34'
+    business_name_1 = 'Mock Hawks'
+    post "/api/v1/favorites/#{user_id_1}/#{business_id_1}", params: {business_name: business_name_1}
+
+    get "/api/v1/favorites/#{user_id_1}"
+    parsed_response = JSON.parse(response.body, symbolize_names: true)[:data]
+    expect(parsed_response.count).to eq(2)
+    expect(parsed_response[0][:type]).to eq("favorites")
+    expect(parsed_response[1][:type]).to eq("favorites")
+    expect(parsed_response[1][:attributes][:business_name]).to eq(business_name_1)
+    expect(parsed_response[1][:attributes][:user_id]).to eq(user_id_1)
+    expect(parsed_response[1][:attributes][:yelp_business_id]).to eq(business_id_1)
+  end
+
+  xit 'can delete a favorite' do
+
   end
 end
