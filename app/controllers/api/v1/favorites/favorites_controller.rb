@@ -15,11 +15,7 @@ class Api::V1::Favorites::FavoritesController < ApplicationController
   end
 
   def destroy
-    favorite = Favorite.find(user_id: params[:user_id], yelp_business_id: params[:yelp_business_id])
-    if favorite.destroy
-      render json: "Favorite has been deleted."
-    else
-      render json: "Favorite could not be deleted."
-    end
+    favorite = Favorite.find_by(user_id: params[:user_id], yelp_business_id: params[:yelp_business_id])
+    render json: FavoritesSerializer.new(favorite.destroy)
   end
 end

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'favorites' do
   before do
-    Favorite.create(
+    @favorite = Favorite.create(
       user_id: 25,
       yelp_business_id: 'kjujytgfuy6vrI76gibutfgJHK',
       business_name: 'The Dryest Cleaners'
@@ -37,7 +37,13 @@ describe 'favorites' do
     expect(parsed_response[1][:attributes][:yelp_business_id]).to eq(business_id_1)
   end
 
-  xit 'can delete a favorite' do
+  it 'can delete a favorite' do
+
+    expect(Favorite.find(@favorite.id)).to be_truthy
+    id_to_check = @favorite.id
+    delete "/api/v1/favorites/#{@favorite.user_id}/#{@favorite.yelp_business_id}"
+
+    expect(Favorite.find_by(id: id_to_check)).to eq(nil)
 
   end
 end
