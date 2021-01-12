@@ -8,7 +8,7 @@ class Api::V1::LocationController < ApplicationController
   end
 
   def update
-    location = Location.find_by(user_id: (params[:user_id]).to_i)
+    location = Location.find_by(user_id: params[:user_id].to_i)
     render json: LocationSerializer.new(Location.update(location.id, location_params))
   end
 
