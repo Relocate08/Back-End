@@ -42,14 +42,29 @@ describe 'Location' do
     user_id = 23
     location = '80110'
 
-# Not sure how to go forward with this, likely will need to pass in params instead
-
     post "/api/v1/#{location}/#{user_id}"
     created_location = Location.last
 
     expect(response).to be_successful
     parsed = JSON.parse(response.body, symbolize_names: true)
-require 'pry'; binding.pry
-    expect(parsed[:data])
+
+    expect(parsed[:data]).to have_key(:id)
+    expect(parsed[:data][:id]).to be_a String
+    expect(parsed[:data][:id]).to eq(created_location.id.to_s)
+
+    expect(parsed[:data]).to have_key(:type)
+    expect(parsed[:data][:type]).to be_a String
+    expect(parsed[:data][:type]).to eq('location')
+
+    expect(parsed[:data]).to have_key(:attributes)
+    expect(parsed[:data][:attributes]).to be_a Hash
+
+    expect(parsed[:data][:attributes]).to have_key(:user_id)
+    expect(parsed[:data][:attributes][:user_id]).to be_an Integer
+    expect(parsed[:data][:attributes][:user_id]).to eq(user_id)
+
+    expect(parsed[:data][:attributes]).to have_key(:location)
+    expect(parsed[:data][:attributes][:location]).to be_a String
+    expect(parsed[:data][:attributes][:location]).to eq(location)
   end
 end
