@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe 'Businesses Search Facade' do
 
+#utilities endpoints
   it 'can see electricity search results' do
     utility = BusinessesSearchFacade.utilities_search('80211', 'electricity')
 
@@ -54,6 +55,7 @@ describe 'Businesses Search Facade' do
     expect(utility.first.url).to be_a(String)
   end
 
+#recreation endpoints
   it 'can see gyms search results' do
     gyms = BusinessesSearchFacade.recreation_search('80211', 'gyms')
 
@@ -155,5 +157,97 @@ describe 'Businesses Search Facade' do
     expect(golf.first.name).to be_a(String)
     expect(golf.first.phone).to be_a(String)
     expect(golf.first.url).to be_a(String)
+  end
+
+  #homeservices
+  it 'can see homecleaning search results' do
+    homecleaning = BusinessesSearchFacade.homeservices_search('80211', 'homecleaning')
+
+    expect(homecleaning).to be_an(Array)
+    expect(homecleaning.first).to be_a(Business)
+    expect(homecleaning.first.distance).to be_a(Float)
+    expect(homecleaning.first.image).to be_a(String)
+    expect(homecleaning.first.location).to be_a(String)
+    expect(homecleaning.first.name).to be_a(String)
+    expect(homecleaning.first.phone).to be_a(String)
+    expect(homecleaning.first.url).to be_a(String)
+  end
+
+  it 'can see landscaping search results' do
+    landscaping = BusinessesSearchFacade.homeservices_search('80211', 'landscaping')
+
+    expect(landscaping).to be_an(Array)
+    expect(landscaping.first).to be_a(Business)
+    expect(landscaping.first.distance).to be_a(Float)
+    expect(landscaping.first.image).to be_a(String)
+    expect(landscaping.first.location).to be_a(String)
+    expect(landscaping.first.name).to be_a(String)
+    expect(landscaping.first.phone).to be_a(String)
+    expect(landscaping.first.url).to be_a(String)
+  end
+
+  it 'can see handyman search results' do
+    handyman = BusinessesSearchFacade.homeservices_search('80211', 'handyman')
+
+    expect(handyman).to be_an(Array)
+    expect(handyman.first).to be_a(Business)
+    expect(handyman.first.distance).to be_a(Float)
+    expect(handyman.first.image).to be_a(String)
+    expect(handyman.first.location).to be_a(String)
+    expect(handyman.first.name).to be_a(String)
+    expect(handyman.first.phone).to be_a(String)
+    expect(handyman.first.url).to be_a(String)
+  end
+
+  it 'can see damage restoration search results' do
+    damagerestoration = BusinessesSearchFacade.homeservices_search('80211', 'damagerestoration')
+
+    expect(damagerestoration).to be_an(Array)
+    expect(damagerestoration.first).to be_a(Business)
+    expect(damagerestoration.first.distance).to be_a(Float)
+    expect(damagerestoration.first.image).to be_a(String)
+    expect(damagerestoration.first.location).to be_a(String)
+    expect(damagerestoration.first.name).to be_a(String)
+    expect(damagerestoration.first.phone).to be_a(String)
+    expect(damagerestoration.first.url).to be_a(String)
+  end
+
+  it 'can see locksmiths search results' do
+    locksmiths = BusinessesSearchFacade.homeservices_search('80211', 'locksmiths')
+
+    expect(locksmiths).to be_an(Array)
+    expect(locksmiths.first).to be_a(Business)
+    expect(locksmiths.first.distance).to be_a(Float)
+    expect(locksmiths.first.image).to be_a(String)
+    expect(locksmiths.first.location).to be_a(String)
+    expect(locksmiths.first.name).to be_a(String)
+    expect(locksmiths.first.phone).to be_a(String)
+    expect(locksmiths.first.url).to be_a(String)
+  end
+
+  it 'can see painters search results' do
+    painters = BusinessesSearchFacade.homeservices_search('80211', 'painters')
+
+    expect(painters).to be_an(Array)
+    expect(painters.first).to be_a(Business)
+    expect(painters.first.distance).to be_a(Float)
+    expect(painters.first.image).to be_a(String)
+    expect(painters.first.location).to be_a(String)
+    expect(painters.first.name).to be_a(String)
+    expect(painters.first.phone).to be_a(String)
+    expect(painters.first.url).to be_a(String)
+  end
+
+  it 'can see plumbing search results' do
+    plumbing = BusinessesSearchFacade.homeservices_search('80211', 'plumbing')
+
+    expect(plumbing).to be_an(Array)
+    expect(plumbing.first).to be_a(Business)
+    expect(plumbing.first.distance).to be_a(Float)
+    expect(plumbing.first.image).to be_a(String)
+    expect(plumbing.first.location).to be_a(String)
+    expect(plumbing.first.name).to be_a(String)
+    expect(plumbing.first.phone).to be_a(String)
+    expect(plumbing.first.url).to be_a(String)
   end
 end
