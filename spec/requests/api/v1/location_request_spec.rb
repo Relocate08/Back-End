@@ -42,14 +42,29 @@ describe 'Location' do
     user_id = 23
     location = '80110'
 
-# Not sure how to go forward with this, likely will need to pass in params instead
-
     post "/api/v1/#{location}/#{user_id}"
     created_location = Location.last
 
     expect(response).to be_successful
     parsed = JSON.parse(response.body, symbolize_names: true)
-require 'pry'; binding.pry
     expect(parsed[:data])
+  end
+
+  xit 'can update location' do
+
+  end
+
+  it 'can delete location' do
+    location = "76953"
+    user_id = 5
+    post "/api/v1/#{location}/#{user_id}"
+
+    last_location = Location.last
+    last_location_id = last_location.id
+
+    expect(Location.find_by(id: last_location_id)).to be_truthy
+
+    delete "/api/v1/location/#{user_id}"
+    expect(Location.find_by(id: last_location_id)).to be(nil)
   end
 end

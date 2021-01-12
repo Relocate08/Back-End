@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       get '/location/:user_id', to: 'location#show'
       post '/:location/:user_id', to: 'location#create'
       patch '/:location/:user_id', to: 'location#update'
+      delete '/location/:user_id', to: 'location#destroy'
     end
   end
 end
