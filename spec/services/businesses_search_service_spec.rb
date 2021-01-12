@@ -251,4 +251,54 @@ describe 'Business Search Service' do
     expect(pools_info).to have_key(:location)
     expect(pools_info[:location]).to be_a(Hash)
   end
+
+  it 'search(recreation - golf)' do
+    golf = BusinessesSearchService.recreation_search('80211', 'golf')
+    expect(golf).to be_a(Hash)
+    golf_info = golf[:data][0]
+    expect(golf_info).to be_an(Hash)
+
+    expect(golf_info).to have_key(:name)
+    expect(golf_info[:name]).to be_a(String)
+
+    expect(golf_info).to have_key(:image)
+    expect(golf_info[:image]).to be_a(String)
+
+    expect(golf_info).to have_key(:url)
+    expect(golf_info[:url]).to be_a(String)
+
+    expect(golf_info).to have_key(:phone)
+    expect(golf_info[:phone]).to be_a(String)
+
+    expect(golf_info).to have_key(:distance)
+    expect(golf_info[:distance]).to be_a(Float)
+
+    expect(golf_info).to have_key(:location)
+    expect(golf_info[:location]).to be_a(Hash)
+  end
+
+  it 'search(recreation - playgrounds)' do
+    playgrounds = BusinessesSearchService.recreation_search('80211', 'playgrounds')
+    expect(playgrounds).to be_a(Hash)
+    playgrounds_info = playgrounds[:data][0]
+    expect(playgrounds_info).to be_an(Hash)
+
+    expect(playgrounds_info).to have_key(:name)
+    expect(playgrounds_info[:name]).to be_a(String)
+
+    expect(playgrounds_info).to have_key(:image)
+    expect(playgrounds_info[:image]).to be_a(String)
+
+    expect(playgrounds_info).to have_key(:url)
+    expect(playgrounds_info[:url]).to be_a(String)
+
+    expect(playgrounds_info).to have_key(:phone)
+    expect(playgrounds_info[:phone]).to be_a(String)
+
+    expect(playgrounds_info).to have_key(:distance)
+    expect(playgrounds_info[:distance]).to be_a(Float)
+
+    expect(playgrounds_info).to have_key(:location)
+    expect(playgrounds_info[:location]).to be_a(Hash)
+  end
 end
