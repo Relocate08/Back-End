@@ -14,10 +14,8 @@ class BusinessesSearchFacade
     is_open(businesses)
   end
 
-  private
-
   def self.is_open(businesses)
-    results = businesses[:data].select {|result| result[:is_closed] == false}
-    results.map{|result| Business.new(result)}
+    results = businesses[:data].select { |result| result[:is_closed] == false }
+    results.map { |result| Business.new(result) }
   end
 end
