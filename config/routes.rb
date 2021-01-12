@@ -13,9 +13,10 @@ Rails.application.routes.draw do
         delete '/:user_id/:yelp_business_id', to: 'favorites#destroy'
       end
 
-      namespace :location do
-        get '/:user_id', to: ''
-      end
+
+        get '/:location/:user_id', to: 'location#show'
+        post '/:location/:user_id', to: 'location#create'
+
     end
   end
 end
