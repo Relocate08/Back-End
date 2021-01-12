@@ -101,7 +101,7 @@ describe 'Location' do
   end
 
   it 'can delete location' do
-    location = "76953"
+    location = '76953'
     user_id = 5
     post "/api/v1/#{location}/#{user_id}"
 

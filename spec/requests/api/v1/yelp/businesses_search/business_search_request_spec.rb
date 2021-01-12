@@ -1,8 +1,7 @@
 require 'rails_helper'
 
-describe "Yelp businesses search by category" do
-  it "can return electric companies based on user input" do
-
+describe 'Yelp businesses search by category' do
+  it 'can return electric companies based on user input' do
     get '/api/v1/yelp/80211/utilities/electricity'
     expect(response).to be_successful
     json = JSON.parse(response.body, symbolize_names: true)
@@ -13,7 +12,7 @@ describe "Yelp businesses search by category" do
     expect(businesses_info).to have_key(:id)
     expect(businesses_info[:id]).to be_a(String)
     expect(businesses_info).to have_key(:type)
-    expect(businesses_info[:type]).to eq("businesses")
+    expect(businesses_info[:type]).to eq('businesses')
     expect(businesses_info).to have_key(:attributes)
 
     businesses_attr = businesses_info[:attributes]
@@ -36,8 +35,7 @@ describe "Yelp businesses search by category" do
     expect(businesses_attr[:location]).to be_a(String)
   end
 
-
-  it "can return water companies based on user input" do
+  it 'can return water companies based on user input' do
     get '/api/v1/yelp/80211/utilities/water'
 
     expect(response).to be_successful
@@ -49,7 +47,7 @@ describe "Yelp businesses search by category" do
     expect(businesses_info).to have_key(:id)
     expect(businesses_info[:id]).to be_a(String)
     expect(businesses_info).to have_key(:type)
-    expect(businesses_info[:type]).to eq("businesses")
+    expect(businesses_info[:type]).to eq('businesses')
     expect(businesses_info).to have_key(:attributes)
 
     businesses_attr = businesses_info[:attributes]
@@ -72,8 +70,7 @@ describe "Yelp businesses search by category" do
     expect(businesses_attr[:location]).to be_a(String)
   end
 
-  it "can return isp companies based on user input" do
-
+  it 'can return isp companies based on user input' do
     get '/api/v1/yelp/80211/utilities/isps'
 
     expect(response).to be_successful
@@ -85,7 +82,7 @@ describe "Yelp businesses search by category" do
     expect(businesses_info).to have_key(:id)
     expect(businesses_info[:id]).to be_a(String)
     expect(businesses_info).to have_key(:type)
-    expect(businesses_info[:type]).to eq("businesses")
+    expect(businesses_info[:type]).to eq('businesses')
     expect(businesses_info).to have_key(:attributes)
 
     businesses_attr = businesses_info[:attributes]
@@ -108,8 +105,7 @@ describe "Yelp businesses search by category" do
     expect(businesses_attr[:location]).to be_a(String)
   end
 
-  it "can return tv providers based on user input" do
-
+  it 'can return tv providers based on user input' do
     get '/api/v1/yelp/80211/utilities/tv'
 
     expect(response).to be_successful
@@ -122,7 +118,7 @@ describe "Yelp businesses search by category" do
     expect(businesses_info).to have_key(:id)
     expect(businesses_info[:id]).to be_a(String)
     expect(businesses_info).to have_key(:type)
-    expect(businesses_info[:type]).to eq("businesses")
+    expect(businesses_info[:type]).to eq('businesses')
     expect(businesses_info).to have_key(:attributes)
 
     businesses_attr = businesses_info[:attributes]
@@ -157,7 +153,7 @@ describe "Yelp businesses search by category" do
     expect(business_info).to have_key(:id)
     expect(business_info[:id]).to be_a(String)
     expect(business_info).to have_key(:type)
-    expect(business_info[:type]).to eq("businesses")
+    expect(business_info[:type]).to eq('businesses')
     expect(business_info).to have_key(:attributes)
 
     business_attr = business_info[:attributes]

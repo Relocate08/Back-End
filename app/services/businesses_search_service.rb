@@ -14,8 +14,6 @@ class BusinessesSearchService
     parsed(response)
   end
 
-  private
-
   def self.conn
     Faraday.new(url: 'https://relocate-08-yelp-microservice.herokuapp.com')
   end

@@ -13,7 +13,7 @@ class Api::V1::LocationController < ApplicationController
   end
 
   def destroy
-    location = Location.find_by(user_id: (params[:user_id]).to_i)
+    location = Location.find_by(user_id: params[:user_id].to_i)
     render json: LocationSerializer.new(location.destroy)
   end
 

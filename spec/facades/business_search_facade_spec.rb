@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe 'Businesses Search Facade' do
-
   it 'can see electricity search results' do
     utility = BusinessesSearchFacade.utilities_search('80211', 'electricity')
 
