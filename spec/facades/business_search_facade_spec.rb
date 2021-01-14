@@ -58,7 +58,7 @@ describe 'Businesses Search Facade' do
 #recreation endpoints
   it 'can see gyms search results' do
     gyms = BusinessesSearchFacade.recreation_search('80211', 'gyms')
-
+    
     expect(gyms).to be_an(Array)
     expect(gyms.first).to be_a(Business)
     expect(gyms.first.distance).to be_a(Float)
