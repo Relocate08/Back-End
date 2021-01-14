@@ -5,6 +5,7 @@ Rails.application.routes.draw do
         get '/:location/utilities/:type', to: 'businesses_search#utilities'
         get '/:location/recreation/:type', to: 'businesses_search#recreation'
         get '/:location/homeservices/:type', to: 'businesses_search#homeservices'
+        get '/:location/events', to: 'events#index'
       end
 
       namespace :favorites do
