@@ -12,12 +12,16 @@ class Business
     @image = result[:image]
     @url = result[:url]
     @phone = result[:phone]
-    @distance = result[:distance]
+    @distance = meters_to_miles(result[:distance])
     @location = address(result[:location])
     @id = result[:id]
   end
 
   def address(location)
     "#{location[:address1]} #{location[:address2]} #{location[:city]} #{location[:state]}, #{location[:zip_code]}"
+  end
+
+  def meters_to_miles(length)
+    length * 0.000621371
   end
 end
