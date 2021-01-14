@@ -22,6 +22,6 @@ class Business
   end
 
   def meters_to_miles(length)
-    length * 0.000621371
+    length * 0.000621371 if length
   end
 end
