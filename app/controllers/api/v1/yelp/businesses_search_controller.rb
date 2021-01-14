@@ -13,4 +13,9 @@ class Api::V1::Yelp::BusinessesSearchController < ApplicationController
     data = BusinessesSearchFacade.homeservices_search(params[:location], params[:type])
     render json: BusinessesSerializer.new(data)
   end
+
+  def find_business
+    data = BusinessesSearchFacade.find_business(params[:id])
+    render json: BusinessesSerializer.new(data)
+  end
 end

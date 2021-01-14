@@ -23,4 +23,34 @@ describe Business do
     expect(business.distance).to be_a(Float)
     expect(business.location).to be_a(String)
   end
+
+  it 'meters_to_miles()' do
+    attr = {
+      name: 'Xcel Energy',
+      image: 'https://s3-media1.fl.yelpcdn.com/bphoto/pDZ8YQ098hOq1RzwbFFyWA/o.jpg',
+      url: 'https://www.yelp.com/biz/xcel-energy-denver?adjust_creative=738p3EdhM6u5_PI1JBbrow&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=738p3EdhM6u5_PI1JBbrow',
+      is_closed: false,
+      phone: '(800) 895-4999',
+      distance: 2708.019879293317,
+      location: { address1: '321 W Agate Ave', address2: '', address3: '', city: 'Granby', zip_code: '80446',
+                  country: 'US', state: 'CO' }
+    }
+    business = Business.new(attr)
+    expect(business.meters_to_miles(attr[:distance]).round(2)).to eq(1.68)
+  end
+
+  it 'address()' do
+    attr = {
+      name: 'Xcel Energy',
+      image: 'https://s3-media1.fl.yelpcdn.com/bphoto/pDZ8YQ098hOq1RzwbFFyWA/o.jpg',
+      url: 'https://www.yelp.com/biz/xcel-energy-denver?adjust_creative=738p3EdhM6u5_PI1JBbrow&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=738p3EdhM6u5_PI1JBbrow',
+      is_closed: false,
+      phone: '(800) 895-4999',
+      distance: 2708.019879293317,
+      location: { address1: '321 W Agate Ave', address2: '', address3: '', city: 'Granby', zip_code: '80446',
+                  country: 'US', state: 'CO' }
+    }
+    business = Business.new(attr)
+    expect(business.address(attr[:location])).to eq('321 W Agate Ave  Granby CO, 80446')
+  end
 end

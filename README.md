@@ -34,6 +34,7 @@ Relocate-Back-End-Rails is deployed remotely via Heroku (https://relocate-back-e
 - `get '/:location/utilities/:type'`
 - `get '/:location/recreation/:type'`
 - `get '/:location/homeservices/:type'`
+- `get '/businesses/:id'`
 
 - `get /favorites/:user_id`
 - `post /favorites/:user_id/:yelp_business_id (also requires "business_name" params)`
