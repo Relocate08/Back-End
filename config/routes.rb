@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       namespace :yelp do
+        get '/businesses/:id', to: 'businesses_search#find_business'
         get '/:location/utilities/:type', to: 'businesses_search#utilities'
         get '/:location/recreation/:type', to: 'businesses_search#recreation'
         get '/:location/homeservices/:type', to: 'businesses_search#homeservices'
