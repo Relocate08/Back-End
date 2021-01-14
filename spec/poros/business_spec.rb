@@ -51,6 +51,6 @@ describe Business do
                   country: 'US', state: 'CO' }
     }
     business = Business.new(attr)
-    expect(business.address(attr[:location])).to eq("321 W Agate Ave  Granby CO, 80446")
+    expect(business.address(attr[:location])).to eq('321 W Agate Ave  Granby CO, 80446')
   end
 end
