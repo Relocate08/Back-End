@@ -14,6 +14,11 @@ class BusinessesSearchService
     parsed(response)
   end
 
+  def self.find_business(yelp_business_id)
+    response = conn.get("/businesses/#{yelp_business_id}")
+    parsed(response)
+  end
+
   def self.conn
     Faraday.new(url: 'https://relocate-08-yelp-microservice.herokuapp.com')
   end
