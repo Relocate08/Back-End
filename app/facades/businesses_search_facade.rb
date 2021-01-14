@@ -18,4 +18,9 @@ class BusinessesSearchFacade
     results = businesses[:data].select { |result| result[:is_closed] == false }
     results.map { |result| Business.new(result) }
   end
+
+   def self.find_business(yelp_business_id)
+    business = BusinessesSearchService.find_business(yelp_business_id)
+    Business.new(business)
+   end
 end
