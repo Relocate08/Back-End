@@ -51,3 +51,15 @@ Relocate-Back-End-Rails is deployed remotely via Heroku (https://relocate-back-e
 
 <img width="667" alt="Relocate BE Schema" src="https://user-images.githubusercontent.com/63476564/104670572-19ab0700-56aa-11eb-81e0-66753a68ac4d.png">
 
+
+## Authors
+  - **Christopher Allbritton** - *Turing Student* - [GitHub Profile](https://github.com/Callbritton) - [Turing Alum Profile](https://alumni.turing.io/alumni/christopher-allbritton) - [LinkedIn](https://www.linkedin.com/in/christopher-allbritton)
+  - **Dani Coleman** - *Turing Student* - [GitHub Profile](https://github.com/dcoleman21) - [Turing Alum Profile](https://alumni.turing.io/alumni/dani-coleman) - [LinkedIn](https://www.linkedin.com/in/dcoleman-21/)
+  - **Kevin Cuadros** - *Turing Student* - [GitHub Profile](https://github.com/kevxo) - [Turing Alum Profile](https://alumni.turing.io/alumni/kevin-david-cuadros) - [LinkedIn](https://www.linkedin.com/in/kevin-cuadros-2bb4551a1/)
+  - **Hanna Davis** - *Turing Student* - [GitHub Profile](https://github.com/Oxalisviolacea) - [Turing Alum Profile](https://alumni.turing.io/alumni/hanna-davis) - [LinkedIn](https://www.linkedin.com/in/hanna-davis/)
+  - **Hope Gochnour** - *Turing Student* - [GitHub Profile](https://github.com/hopesgit) - [Turing Alum Profile]() - [LinkedIn](https://www.linkedin.com/in/hope-gochnour-3056aa1ba/)
+  - **Jake Heft** - *Turing Student* - [GitHub Profile](https://github.com/jakeheft) - [Turing Alum Profile](https://alumni.turing.io/alumni/jake-heft) - [LinkedIn](https://www.linkedin.com/in/jakeheft/)
+  - **John Kim** - *Turing Student* - [GitHub Profile](https://github.com/abcdefghijohn) - [Turing Alum Profile](https://alumni.turing.io/alumni/john-kim) - [LinkedIn](https://www.linkedin.com/in/abcdefghijohn/)
+  - **Jose Lopez** - *Turing Student* - [GitHub Profile](https://github.com/JoseLopez235) - [Turing Alum Profile](https://alumni.turing.io/alumni/jose-lopez) - [LinkedIn](https://www.linkedin.com/in/jose-lopez-0551a01a1/)
+  - **Brett Sherman** - *Turing Student* - [GitHub Profile](https://github.com/BJSherman80) - [Turing Alum Profile](https://alumni.turing.io/alumni/brett-sherman) - [LinkedIn](https://www.linkedin.com/in/brettshermanll/)
+  - **Zach Stearns** - *Turing Student* - [GitHub Profile](https://github.com/Stearnzy) - [Turing Alum Profile](https://alumni.turing.io/alumni/zach-stearns) - [LinkedIn](https://www.linkedin.com/in/zach-stearns/)
