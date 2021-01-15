@@ -47,10 +47,5 @@ Relocate-Back-End-Rails is deployed remotely via Heroku (https://relocate-back-e
 
 ## Schema <a name="schema"></a>
 
-- Table: Locations
-  * location:string
-  * user_id:integer
-- Table: Favorites
-  * user_id:integer
-  * yelp_business_id:string
-  * business_name:string
+<img width="667" alt="Relocate BE Schema" src="https://user-images.githubusercontent.com/63476564/104670572-19ab0700-56aa-11eb-81e0-66753a68ac4d.png">
+
