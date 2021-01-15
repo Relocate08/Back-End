@@ -6,6 +6,12 @@
 
 Relocate08 is an application that utilizes a frontend, backend, and microservice to consume and expose API data sourced from Yelp. This backend is responsible for receiving requests from the frontend, submiting requests to the microservice which then returns API data for the backend to package and return to the frontend for viewing.
 
+## Table of Contents
+* [Local Setup]()
+* [Deployment]()
+* [Endpoints]()
+* [Schema]()
+* [Authors]()
 ## Local Setup:
 
 This project requires:
