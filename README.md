@@ -7,11 +7,11 @@
 Relocate08 is an application that utilizes a frontend, backend, and microservice to consume and expose API data sourced from Yelp. This backend is responsible for receiving requests from the frontend, submiting requests to the microservice which then returns API data for the backend to package and return to the frontend for viewing.
 
 ## Table of Contents
-* [Local Setup]()
-* [Deployment]()
-* [Endpoints]()
-* [Schema]()
-* [Authors]()
+* [Local Setup](https://github.com/Relocate08/Relocate-Back-End-Rails/blob/main/README.md#local-setup)
+* [Deployment](https://github.com/Relocate08/Relocate-Back-End-Rails/blob/main/README.md#deployment-)
+* [Endpoints](https://github.com/Relocate08/Relocate-Back-End-Rails/blob/main/README.md#endpoints)
+* [Schema](https://github.com/Relocate08/Relocate-Back-End-Rails/blob/main/README.md#schema-)
+* [Authors](https://github.com/Relocate08/Relocate-Back-End-Rails/blob/main/README.md#authors)
 ## Local Setup:
 
 This project requires:
