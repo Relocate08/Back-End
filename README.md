@@ -1,3 +1,5 @@
+![](https://img.shields.io/badge/Rails-5.2.4-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a) ![](https://img.shields.io/badge/Ruby-2.5.3-orange) ![](https://img.shields.io/badge/Code-HTML-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a) ![](https://travis-ci.com/Relocate08/Relocate-Back-End-Rails.svg?branch=main)
+
 ## About This Project:
 
 Relocate08 provides users with the ability to enter an address in order to receive curated information for services near their new home.
